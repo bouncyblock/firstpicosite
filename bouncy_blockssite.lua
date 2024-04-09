@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-04-08 13:52:56",modified="2024-04-08 20:48:20",revision=1]]
+--[[pod_format="raw",created="2024-04-08 13:52:56",modified="2024-04-09 11:25:28",revision=3]]
 --[[	Thanks for using PicoNet Sitebuilder! I look forward
 	to seeing your picosite! In order to make this available
 	on PicoNet Explorer, you'll need to upload this lua file
@@ -13,7 +13,7 @@
 ]]
 
 	p = {
-	title="untitled_page ",
+	title="itchio-info ",
 	g=create_gui({
 		x=0,y=0,
 		width=300,height=300,
@@ -22,55 +22,16 @@
 	copybuttons = {},
 	init = function(self,explorer)
 		local page = self
-		self.button9 = self.g:attach_button({
-			x=219.0, y=93.5, width=70, height=13,
-			label="Join the jam! ",
-			click=function()
-				explorer:open_page("https://itch.io/jam/picotron-jam")
-			end
-		})
-		add(self.copybuttons, self.g:attach({
-			x=198.0, y=80.0, width=15, height=15,
-			event = function(self,msg)
-				if(msg.event == "release") then
-					set_clipboard("--[[pod,pod_type=\"image\"]]unpod(\""..page.image10_raw.."\")")
-					notify("image userdata added to clipboard")
-				end
-			end
-		}))
-		add(self.copybuttons,self.g:attach({
-			x=57.0, y=6.0, width=16, height=16,
-			event = function(self,msg)
-				if(msg.event == "release") then
-					set_clipboard(pod({type="gif", w=16, h=16, frames=12, speed=1, clr=0, imgdata=page.gif11_gif_raw}))
-					notify("gif added to clipboard")
-				end
-			end
-		}))
 	end,
 	get_gui = function(self,explorer)
 		return self.g
 	end,
 	draw = function(self,explorer)
-		cls(0)
-		rectfill(0,-328,300,172,26)
-		ovalfill(10.0,10.0,60.0,60.0,12)
-		print("Bouncy's\nSite\n ",15.0,24.0,7)
-		print("Welcome to my site, the place where\nroads meet!\nHere you can find whatever I'm working\non, challenges, game jams, art, or just\nrandom stuff!\n\n ",75.0,9.0,8)
-		rectfill(13.0,79.0,213.0,119.0,9)
-		print("PICOTRON JAM!\nThis is the game jam that I'm running.\nStatus: Not started ",13.0,81.0,7)
-		palt(0)
-		palt(0, true)
-		sspr(self.image10, 0, 0, 8,8,198.0,80.0,15,15)
-		palt()
-		self.gif11:draw(57.0,6.0,16,16,1,0)
+		cls(30)
+		print("Welcome to the Picotron Game Jam!\nThis is a unique opportunity for game developers to\nshowcase their skills and creativity within the PICOTRON\nenvironment.\n\nRules\nDuration: Participants have one week to develop their\ngame, followed by one week of voting.\nParticipation: Only those who submit a game can vote.\nDevelopment: All games must be coded in PICOTRON.\nPrize: There is none! This is just a jam to see what you\ncan make!\nKindness: Be nice, nothing inappropriate, harmful, or\nhurtful\nVoting: Each participant is allowed to vote as many\ntimes as they want, and cannot vote for their own game.\nTheme: There is none! Do whatever you want!\nTimeline\nDevelopment Week: April 10th, 2024 to April 17th, 2024\n\nVoting Week: April 18th, 2024 to April 25th, 2024\n\nSubmission Guidelines\nSubmit your game via the official game jam portal.\nEnsure your game runs on the PICOTRON platform without\nissues.\nProvide a brief description and instructions for your\ngame.\nVoting Process\nAfter the development week, the voting portal will open.\nReview the games and cast your votes for the different\ncategories (excluding your own). The game with the\nhighest votes at the end of the voting week will be\nrecognized as the winner.\n\nGood luck to all participants! May the best game win!\n ",0,0.46153846153846,7)
 		
 	end,
 	update = function(self,explorer)
 		
-	end,
-	gif11_gif_raw = "b64:bHo0ALcBAAAQAwAA-AJweHUAQyDAEATwtD8WsE7ALgIA-wCgTpAOLw8ekA4tLqAOHR4EAA3-BYAOLS5wLi0OkB4tHpAeLQ4NgC4dBQAOACgA-wVwHi0ecH6AfoBugA4fIA4cDoAOHAYAD7ducH5gBR4cDhyAHhYADwYAHBFwPACAcAUOHA0MDYAHAAUgAD8uDC4EAAYVDjYAAAcAgS4MDqAuDB6QHgAfCQQACAE_AP8EHpAFLgmgBR4JDrAeCQ4FoB4JCgUADzEOBZAyAP8EFQ0ACQqQFQ0JCrAFDQrABQ0ZsAQAByAKsCkA8gTgDxkZCqALDQkNoA0ZsA0OGgmgBQBGCgkPFAwAFAgLAHAOGgmwDRnQMQDxBtANCQ0JGoAdGRpgDQ4JKpANChgJoAUAWwoJKAmQCgACBQDyEw4JKsAdGRqgDg0JCgQJgA4ZCgQJYA0OCggECZANCQgECaAGAG4KGAQLCZAMAAMGAAExABHAPgCCoA4LCgQLCoAHALBgDQAJBAsKkA0psAMAWQkICwmgCQAiKbAiABLAMAD1BqANACmQDQApcA0AKaAN4A3gDQAZsAYAwOANACnQDQApsA3wpQ==",
-	image10_raw = "b64:bHo0ADMAAAAxAAAA8CJweHUAQyAICAQQPxQwBR4FIAUIDxgIDQUQBTgFEAUNCA0IBRAFKA0FEAUIDRgFIDUQ",
-	image10 = unpod("b64:bHo0ADMAAAAxAAAA8CJweHUAQyAICAQQPxQwBR4FIAUIDxgIDQUQBTgFEAUNCA0IBRAFKA0FEAUIDRgFIDUQ"),
-	gif11 = new_gif("b64:bHo0ALcBAAAQAwAA-AJweHUAQyDAEATwtD8WsE7ALgIA-wCgTpAOLw8ekA4tLqAOHR4EAA3-BYAOLS5wLi0OkB4tHpAeLQ4NgC4dBQAOACgA-wVwHi0ecH6AfoBugA4fIA4cDoAOHAYAD7ducH5gBR4cDhyAHhYADwYAHBFwPACAcAUOHA0MDYAHAAUgAD8uDC4EAAYVDjYAAAcAgS4MDqAuDB6QHgAfCQQACAE_AP8EHpAFLgmgBR4JDrAeCQ4FoB4JCgUADzEOBZAyAP8EFQ0ACQqQFQ0JCrAFDQrABQ0ZsAQAByAKsCkA8gTgDxkZCqALDQkNoA0ZsA0OGgmgBQBGCgkPFAwAFAgLAHAOGgmwDRnQMQDxBtANCQ0JGoAdGRpgDQ4JKpANChgJoAUAWwoJKAmQCgACBQDyEw4JKsAdGRqgDg0JCgQJgA4ZCgQJYA0OCggECZANCQgECaAGAG4KGAQLCZAMAAMGAAExABHAPgCCoA4LCgQLCoAHALBgDQAJBAsKkA0psAMAWQkICwmgCQAiKbAiABLAMAD1BqANACmQDQApcA0AKaAN4A3gDQAZsAYAwOANACnQDQApsA3wpQ==",12)
+	end
 }
