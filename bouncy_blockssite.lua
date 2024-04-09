@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-04-08 13:52:56",modified="2024-04-09 11:28:13",revision=6]]
+--[[pod_format="raw",created="2024-04-08 13:52:56",modified="2024-04-09 19:15:29",revision=10]]
 --[[	Thanks for using PicoNet Sitebuilder! I look forward
 	to seeing your picosite! In order to make this available
 	on PicoNet Explorer, you'll need to upload this lua file
@@ -13,7 +13,7 @@
 ]]
 
 	p = {
-	title="untitled_page ",
+	title="main ",
 	g=create_gui({
 		x=0,y=0,
 		width=300,height=300,
@@ -23,8 +23,8 @@
 	init = function(self,explorer)
 		local page = self
 		self.button8 = self.g:attach_button({
-			x=219, y=93.5, width=70, height=13,
-			label="Join the jam! ",
+			x=218.0, y=81.5, width=70, height=13,
+			label="Info ",
 			click=function()
 				explorer:open_page("https://raw.githubusercontent.com/bouncyblock/firstpicosite/main/itchioinfo.lua")
 			end
@@ -47,6 +47,13 @@
 				end
 			end
 		}))
+		self.button11 = self.g:attach_button({
+			x=219.0, y=101.5, width=70, height=13,
+			label="Join the jam! ",
+			click=function()
+				set_clipboard("https://itch.io/jam/picotron-jam")
+			end
+		})
 	end,
 	get_gui = function(self,explorer)
 		return self.g
@@ -55,7 +62,7 @@
 		cls(0)
 		rectfill(0,-328,300,172,26)
 		ovalfill(10,10,60,60,12)
-		print("Bouncy's\nSite\n ",3.0,5.0,7)
+		print("Bouncy's\nSite\n ",15,24,7)
 		print("Welcome to my site, the place where\nroads meet!\nHere you can find whatever I'm working\non, challenges, game jams, art, or just\nrandom stuff!\n\n ",75,9,8)
 		rectfill(13,79,213,119,9)
 		print("PICOTRON JAM!\nThis is the game jam that I'm running.\nStatus: Not started ",13,81,7)
