@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-04-08 13:52:56",modified="2024-04-09 19:15:29",revision=10]]
+--[[pod_format="raw",created="2024-04-08 13:52:56",modified="2024-04-09 19:21:10",revision=11]]
 --[[	Thanks for using PicoNet Sitebuilder! I look forward
 	to seeing your picosite! In order to make this available
 	on PicoNet Explorer, you'll need to upload this lua file
@@ -23,7 +23,7 @@
 	init = function(self,explorer)
 		local page = self
 		self.button8 = self.g:attach_button({
-			x=218.0, y=81.5, width=70, height=13,
+			x=218, y=81.5, width=70, height=13,
 			label="Info ",
 			click=function()
 				explorer:open_page("https://raw.githubusercontent.com/bouncyblock/firstpicosite/main/itchioinfo.lua")
@@ -48,10 +48,11 @@
 			end
 		}))
 		self.button11 = self.g:attach_button({
-			x=219.0, y=101.5, width=70, height=13,
+			x=219, y=101.5, width=70, height=13,
 			label="Join the jam! ",
 			click=function()
 				set_clipboard("https://itch.io/jam/picotron-jam")
+notify("Link to PICOTRON JAM! copied!")
 			end
 		})
 	end,
