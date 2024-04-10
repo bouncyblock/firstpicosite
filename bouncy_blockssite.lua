@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-04-08 13:52:56",modified="2024-04-09 19:21:10",revision=11]]
+--[[pod_format="raw",created="2024-04-08 13:52:56",modified="2024-04-10 11:02:32",revision=12]]
 --[[	Thanks for using PicoNet Sitebuilder! I look forward
 	to seeing your picosite! In order to make this available
 	on PicoNet Explorer, you'll need to upload this lua file
@@ -66,7 +66,7 @@ notify("Link to PICOTRON JAM! copied!")
 		print("Bouncy's\nSite\n ",15,24,7)
 		print("Welcome to my site, the place where\nroads meet!\nHere you can find whatever I'm working\non, challenges, game jams, art, or just\nrandom stuff!\n\n ",75,9,8)
 		rectfill(13,79,213,119,9)
-		print("PICOTRON JAM!\nThis is the game jam that I'm running.\nStatus: Not started ",13,81,7)
+		print("PICOTRON JAM!\nThis is the game jam that I'm running.\nStatus:accepting submissions ",13,81,7)
 		palt(0)
 		palt(0, true)
 		sspr(self.image9, 0, 0, 8,8,198,80,15,15)
